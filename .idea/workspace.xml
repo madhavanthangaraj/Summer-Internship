@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="45aa495a-f2b7-4b37-a036-9ef5404d33cf" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Day-1/Springfirst/src/main/java/org/example/HelloWorld.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Day-1/Springfirst/src/main/java/org/example/ResponseBody.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day-1/Springfirst/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day-1/Springfirst/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/Day-1/Springfirst/src/main/java/org/example/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day-2/SpringSecond/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Day-2/SpringSecond/.idea/vcs.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Day-2/SpringSecond" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="2zOWusaK2ecQaDt4jiCloCDpbzD" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/HP/Desktop/springboot-intern"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="45aa495a-f2b7-4b37-a036-9ef5404d33cf" name="Changes" comment="" />
+      <created>1751602826076</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1751602826076</updated>
+    </task>
+    <servers />
+  </component>
+</project>
