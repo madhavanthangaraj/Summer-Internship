@@ -19,8 +19,6 @@
       <change beforePath="$PROJECT_DIR$/../../Day-4/springfour/src/main/java/org/example/controllers/EmployeeController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Day-4/springfour/src/main/java/org/example/springbootfirst/controllers/EmployeeController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Day-4/springfour/src/test/java/org/example/AppTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controllers/HelloWorldController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controllers/HelloWorldController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/Students.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/Students.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
