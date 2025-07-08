@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -16,8 +15,8 @@ public class HelloWorldService {
 
     List<Employee> emp = new ArrayList<>(
             Arrays.asList(
-                    new Employee(1,"prasanth","Trainner"),
-                    new Employee(2,"Yuvaraj","Faculty"))
+                    new Employee(),
+                    new Employee())
     );
 
     public List<Employee> getMethod(){

@@ -10,15 +10,6 @@
       <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Day-2/SpringSecond/src/main/java/org/example/models/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Day-2/SpringSecond/src/main/java/org/example/models/Employee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Day-2/SpringSecond/src/main/java/org/example/services/HelloWorldService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Day-2/SpringSecond/src/main/java/org/example/services/HelloWorldService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Day-4/dbconnection" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Day-4/springfour/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Day-4/springfour/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Day-4/springfour/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Day-4/springfour/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Day-4/springfour/src/main/java/org/example/App.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Day-4/springfour/src/main/java/org/example/controllers/EmployeeController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Day-4/springfour/src/main/java/org/example/springbootfirst/controllers/EmployeeController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Day-4/springfour/src/test/java/org/example/AppTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
