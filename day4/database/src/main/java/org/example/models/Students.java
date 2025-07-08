@@ -5,46 +5,64 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "students") // optional but recommended
-public class Students {
+@Table(name = "todos")
+public class Students {  // ← Keeping the class name as "Students" per your instruction
 
     @Id
-    private int studentId;
-    private String name;
-    private String course;
+    private int id;
+    private String title;
+    private String description;
+    private String dueDate;
+    private String status; // e.g., "Pending", "Completed"
 
-    // ✅ No-arg constructor (required)
     public Students() {
     }
 
-    // ✅ All-arg constructor (optional)
-    public Students(int studentId, String name, String course) {
-        this.studentId = studentId;
-        this.name = name;
-        this.course = course;
+    public Students(int id, String title, String description, String dueDate, String status) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.dueDate = dueDate;
+        this.status = status;
     }
 
-    public int getStudentId() {
-        return studentId;
+    public int getId() {
+        return id;
     }
 
-    public void setStudentId(int studentId) {
-        this.studentId = studentId;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getCourse() {
-        return course;
+    public String getDescription() {
+        return description;
     }
 
-    public void setCourse(String course) {
-        this.course = course;
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getDueDate() {
+        return dueDate;
+    }
+
+    public void setDueDate(String dueDate) {
+        this.dueDate = dueDate;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

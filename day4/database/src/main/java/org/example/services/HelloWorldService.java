@@ -11,36 +11,33 @@ import java.util.List;
 public class HelloWorldService {
 
     @Autowired
+    StudentRepository repo;
 
-    private StudentRepository studentRepo;
     public List<Students> getMethod() {
-        return studentRepo.findAll();
+        return repo.findAll();
     }
 
-
-    public List<Students> postMethod(Students newStudent) {
-        studentRepo.save(newStudent);
-        return studentRepo.findAll(); // return updated list
+    public List<Students> postMethod(Students todo) {
+        repo.save(todo);
+        return repo.findAll();
     }
 
-
-    public String putMethod(int id, Students updatedStudent) {
-        Students existing = studentRepo.findById(id).orElse(null);
-        if (existing != null) {
-            existing.setName(updatedStudent.getName());
-            existing.setCourse(updatedStudent.getCourse());
-            studentRepo.save(existing);
-            return "Student with ID " + id + " updated successfully.";
+    public String putMethod(int id, Students updatedTodo) {
+        if (repo.existsById(id)) {
+            updatedTodo.setId(id);
+            repo.save(updatedTodo);
+            return "Todo updated successfully!";
+        } else {
+            return "Todo with ID " + id + " not found!";
         }
-        return "Student with ID " + id + " not found.";
     }
-
 
     public String deleteMethod(int id) {
-        if (studentRepo.existsById(id)) {
-            studentRepo.deleteById(id);
-            return "Student with ID " + id + " deleted successfully.";
+        if (repo.existsById(id)) {
+            repo.deleteById(id);
+            return "Todo deleted successfully!";
+        } else {
+            return "Todo with ID " + id + " not found!";
         }
-        return "Student with ID " + id + " not found.";
     }
 }

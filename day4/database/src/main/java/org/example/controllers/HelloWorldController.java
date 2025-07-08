@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 public class HelloWorldController {
+
     @Autowired
     HelloWorldService hws;
 
@@ -18,13 +19,13 @@ public class HelloWorldController {
     }
 
     @PostMapping("/")
-    public List<Students> postMethod(@RequestBody Students student) {
-        return hws.postMethod(student);
+    public List<Students> postMethod(@RequestBody Students todo) {
+        return hws.postMethod(todo);
     }
 
     @PutMapping("/{id}")
-    public String putMethod(@PathVariable int id, @RequestBody Students updatedStudent) {
-        return hws.putMethod(id, updatedStudent);
+    public String putMethod(@PathVariable int id, @RequestBody Students updatedTodo) {
+        return hws.putMethod(id, updatedTodo);
     }
 
     @DeleteMapping("/{id}")
