@@ -1,49 +1,55 @@
 package com.example.springbootfirst.services;
 
 import com.example.springbootfirst.models.RegisterDetails;
+import com.example.springbootfirst.models.Roles;
+import com.example.springbootfirst.models.UserDetailsDto;
 import com.example.springbootfirst.repository.RegisterDetailsRepository;
+import com.example.springbootfirst.repository.RolesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 @Service
 public class AuthService {
 
     @Autowired
-    private RegisterDetailsRepository regRepo;
+    RegisterDetailsRepository registerDetailsRepository;
 
-    public List<RegisterDetails> getRegisterDetails() {
-        return regRepo.findAll();
-    }
+    @Autowired
+    RolesRepository rolesRepository;
 
     @Autowired
     PasswordEncoder passwordEncoder;
 
-    public String addNewUser(RegisterDetails register) {
+    public String addNewEmployee(UserDetailsDto register) {
         RegisterDetails registerDetails = new RegisterDetails();
         registerDetails.setEmpId(register.getEmpId());
         registerDetails.setName(register.getName());
         registerDetails.setEmail(register.getEmail());
-//        registerDetails.setPassword(register.getPassword()); // (or)
         registerDetails.setPassword(passwordEncoder.encode(register.getPassword()));
-//        To securely hash (encrypt) the user's password before saving it to the database.
-        registerDetails.setRole(register.getRole());
-        registerDetails.setGender(register.getGender());
-        registerDetails.setDateOfBirth(register.getDateOfBirth());
-        regRepo.save(registerDetails);
-        return "User registered successfully!";
+        registerDetails.setUserName(register.getUserName());
+        Set<Roles> roles = new HashSet<>();
+        for(String roleName: register.getRoleNames()){
+            Roles role = rolesRepository.findByRoleName(roleName)
+                    .orElseThrow(()->new RuntimeException("User not found" + roleName));
+            roles.add(role);
+        }
+        registerDetails.setRoles(roles);
+        System.out.println("Registration"+ registerDetails);
+        registerDetailsRepository.save(registerDetails);
+        return "Employee Added Successfully";
     }
 
     public String authenticate(RegisterDetails login) {
-        RegisterDetails user = (RegisterDetails) regRepo.findByEmail(login.getEmail());
+        RegisterDetails user = registerDetailsRepository.findByEmail(login.getEmail());
         if(user != null){
-            if(passwordEncoder.matches(login.getPassword(), user.getPassword())){
-                return "User logged in successfully!";
+            if (passwordEncoder.matches(login.getPassword(),user.getPassword())){
+                return "Login Successful";
             }
         }
-        return "User Login Failed!";
+        return "Login Not Successful";
     }
 }
