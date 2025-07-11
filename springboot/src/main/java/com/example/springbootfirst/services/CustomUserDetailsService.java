@@ -3,12 +3,8 @@ package com.example.springbootfirst.services;
 import com.example.springbootfirst.models.RegisterDetails;
 import com.example.springbootfirst.repository.RegisterDetailsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.*;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
@@ -21,24 +17,18 @@ public class CustomUserDetailsService implements UserDetailsService {
     private RegisterDetailsRepository registerDetailsRepository;
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        // Step 1: Load user from database
-        RegisterDetails user = registerDetailsRepository.findByUserName(username)
-                .orElseThrow(() -> new UsernameNotFoundException("User not found with username: " + username));
+    public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
+        RegisterDetails user = registerDetailsRepository.findByUserName(userName)
+                .orElseThrow(() -> new UsernameNotFoundException("User not found: " + userName));
 
-        // Step 2: Convert user roles to GrantedAuthority
-        Set<GrantedAuthority> authorities = user.getRoles().stream()
-                .map(role -> new SimpleGrantedAuthority(role.getRoleName()))
+        Set<SimpleGrantedAuthority> authorities = user.getRoles().stream()
+                .map(role -> new SimpleGrantedAuthority(role.getName()))
                 .collect(Collectors.toSet());
 
-        // Step 3: Log for debugging (optional)
-        System.out.println("=== LOGIN ATTEMPT ===");
-        System.out.println("Username: " + user.getUserName());
-        System.out.println("Encoded Password: " + user.getPassword());
-        System.out.println("Authorities: " + authorities);
-        System.out.println("=====================");
-
-        // Step 4: Return Spring Security user object
-        return new User(user.getUserName(), user.getPassword(), authorities);
+        return new org.springframework.security.core.userdetails.User(
+                user.getUserName(),
+                user.getPassword(),
+                authorities
+        );
     }
 }

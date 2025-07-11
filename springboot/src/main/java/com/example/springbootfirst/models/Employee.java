@@ -12,9 +12,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Roles {
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private int roleId;
-  private String name;
+public class Employee {
+    @Id
+    private int empID;
+    private String name;
+    private String job;
 }

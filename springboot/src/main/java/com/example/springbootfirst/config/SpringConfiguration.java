@@ -9,9 +9,6 @@ import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
@@ -19,44 +16,23 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SpringConfiguration {
 
   @Autowired
-  private CustomUserDetailsService customUserDetailsService;
+  CustomUserDetailsService customUserDetailsService;
 
   @Bean
-  public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+  public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
     http
             .csrf(csrf -> csrf.disable())
-            .authorizeHttpRequests(auth -> {
-              auth.requestMatchers("/api/auth/register").permitAll(); // public registration
-              auth.anyRequest().authenticated(); // all others need login
-            })
-            .httpBasic(Customizer.withDefaults()); // use HTTP Basic auth
+            .authorizeHttpRequests(auth -> auth
+                    .requestMatchers("/api/auth/**").permitAll()
+                    .anyRequest().authenticated()
+            )
+            .httpBasic(Customizer.withDefaults());
 
     return http.build();
   }
 
   @Bean
-  public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration) throws Exception {
-    return configuration.getAuthenticationManager();
-  }
-
-  @Bean
-  public PasswordEncoder passwordEncoder() {
-    return new BCryptPasswordEncoder();
-  }
-
-  @Bean
-  public UserDetailsService userDetailsService() {
-    return customUserDetailsService;
-
-    // OR: In-memory user for quick testing
-        /*
-        UserDetails user = User.builder()
-                .username("admin")
-                .password(passwordEncoder().encode("admin123"))
-                .roles("ADMIN")
-                .build();
-
-        return new InMemoryUserDetailsManager(user);
-        */
+  public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
+    return config.getAuthenticationManager();
   }
 }
