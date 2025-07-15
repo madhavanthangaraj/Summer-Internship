@@ -5,40 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45aa495a-f2b7-4b37-a036-9ef5404d33cf" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/New folder/springboot-project" beforeDir="false" afterPath="$PROJECT_DIR$/New folder/springboot-project" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/New folder/springboot-project/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/New folder/springboot-project/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Springboot-ems.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Springboot-ems/src/main/java/com/example/springbootfirst/controllers/Hello.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Springboot-ems/src/test/java/com/example/springbootfirst/Controller/HelloTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-project" beforeDir="false" afterPath="$PROJECT_DIR$/springboot-project" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-project/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-project/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-project/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-project/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-project/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-project/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-project/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-project/src/main/java/com/example/springbootfirst/SpringbootfirstApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-project/src/main/java/com/example/springbootfirst/config/SpringConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-project/src/main/java/com/example/springbootfirst/controllers/AuthController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-project/src/main/java/com/example/springbootfirst/controllers/EmployeeController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-project/src/main/java/com/example/springbootfirst/jwt/JwtAuthenticationFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-project/src/main/java/com/example/springbootfirst/jwt/JwtTokenProvider.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-project/src/main/java/com/example/springbootfirst/models/JwtResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-project/src/main/java/com/example/springbootfirst/models/RegisterDetails.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-project/src/main/java/com/example/springbootfirst/models/Roles.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-project/src/main/java/com/example/springbootfirst/models/UserDetailsDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-project/src/main/java/com/example/springbootfirst/repository/RegisterDetailsRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-project/src/main/java/com/example/springbootfirst/repository/RegisterRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-project/src/main/java/com/example/springbootfirst/repository/RolesRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-project/src/main/java/com/example/springbootfirst/services/AuthService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-project/src/main/java/com/example/springbootfirst/services/CustomUserDetailsService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-project/src/main/java/com/example/springbootfirst/services/EmployeeService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-project/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-project/src/test/java/com/example/springbootfirst/SpringbootfirstApplicationTests.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
