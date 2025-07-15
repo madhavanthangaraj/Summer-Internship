@@ -12,46 +12,51 @@ import java.util.List;
 public class EmployeeController {
 
     @Autowired
-    EmployeeService hws;
+    EmployeeService employeeService;
 
-    @GetMapping("/")
+    @GetMapping("/welcome")
     public String route() {
         return "Welcome to spring boot route";
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @GetMapping("/employees")
+    @GetMapping("/")
     public List<RegisterDetails> getEmployees() {
-        return hws.getAllEmployees(); // 🔁 Fix 1
+        return employeeService.getAllEmployees();
     }
 
+    // Get by employee Id
     @PreAuthorize("hasRole('USER')")
     @GetMapping("/id/{id}")
     public RegisterDetails getEmployeeById(@PathVariable int id) {
-        return hws.getEmployeeById(id);
+        return employeeService.getEmployeeById(id);
     }
 
+    // Add new employee
     @PreAuthorize("hasRole('ADMIN')")
-    @PostMapping("/employees")
-    public String addEmployee(@RequestBody RegisterDetails emp) {
-        return hws.addEmployee(emp); // 🔁 Fix 2
+    @PostMapping
+    public String addEmployee(@RequestBody RegisterDetails employee) {
+        return employeeService.addEmployee(employee);
     }
 
+    // Update employee
     @PreAuthorize("hasRole('ADMIN')")
-    @PutMapping("/employees/{id}")
-    public String updateEmployee(@PathVariable int id, @RequestBody RegisterDetails emp) {
-        return hws.updateEmployee(id, emp); // 🔁 Fix 3
+    @PutMapping("/{id}")
+    public String updateEmployee(@PathVariable int id, @RequestBody RegisterDetails employee) {
+        return employeeService.updateEmployee(id, employee);
     }
 
+    // Delete all employees
     @PreAuthorize("hasRole('ADMIN')")
-    @DeleteMapping("/employees")
-    public String deleteEmployees() {
-        return hws.deleteEmployees(); // 🔁 Fix 4
+    @DeleteMapping
+    public String deleteAllEmployees() {
+        return employeeService.deleteEmployees();
     }
 
+    // Delete by ID
     @PreAuthorize("hasAnyRole('ADMIN','USER')")
     @DeleteMapping("/id/{id}")
     public String deleteEmployeeById(@PathVariable int id) {
-        return hws.deleteEmployeeById(id);
+        return employeeService.deleteEmployeeById(id);
     }
 }

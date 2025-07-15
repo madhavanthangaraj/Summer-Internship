@@ -23,22 +23,25 @@ public class EmployeeControllerTest {
     EmployeeController employeeController;
 
     @BeforeEach
-    void setUp(){
+    void setUp() {
         MockitoAnnotations.openMocks(this);
     }
 
     @Test
-    void testRoute(){
-        String result = employeeController.route();
-        assertEquals("Welcome to spring boot route",result);
+    void testRoute() {
+        String response = employeeController.route();
+        assertEquals("Welcome to spring boot route", response);
     }
 
     @Test
-    void testGetMethod(){
-        RegisterDetails emp1 = new RegisterDetails();
-        RegisterDetails emp2 = new RegisterDetails();
-        when(employeeService.getAllEmployees()).thenReturn(Arrays.asList(emp1,emp2));
-        List<RegisterDetails> result = employeeController.getEmployees();
-        assertEquals(2,result.size());
+    void testGetMethod() {
+        RegisterDetails employee1 = new RegisterDetails();
+        RegisterDetails employee2 = new RegisterDetails();
+
+        List<RegisterDetails> mockEmployeeList = Arrays.asList(employee1, employee2);
+        when(employeeService.getAllEmployees()).thenReturn(mockEmployeeList);
+
+        List<RegisterDetails> actualEmployeeList = employeeController.getEmployees();
+        assertEquals(2, actualEmployeeList.size());
     }
 }

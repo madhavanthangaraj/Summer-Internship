@@ -1,44 +1,43 @@
-package com.example.springbootfirst.controllers;
+package com.example.springbootfirst.services;
 
+import com.example.springbootfirst.models.RegisterDetails;
+import com.example.springbootfirst.repository.RegisterDetailsRepository;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 
-public class CalculatorTestController {
+import java.util.Arrays;
+import java.util.List;
 
-    CalculatorController calculator = new CalculatorController();
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.when;
 
-    @Test
-    public void testAddNumbers() {
-        int result = calculator.addNumbers(10, 7);
-        System.out.println("Addition : " + result);
-        assertEquals(17, result);
+class EmployeeServiceTest {
+
+    @Mock
+    RegisterDetailsRepository registerDetailsRepository;
+
+    @InjectMocks
+    EmployeeService employeeService;
+
+    @BeforeEach
+    void setUp() {
+        MockitoAnnotations.openMocks(this);
     }
 
     @Test
-    public void testSubtractNumbers() {
-        int result = calculator.subtractNumbers(100, 45);
-        System.out.println("Subtraction : " + result);
-        assertEquals(55, result);
-    }
+    void testGetMethod() {
+        RegisterDetails employee1 = new RegisterDetails();
+        RegisterDetails employee2 = new RegisterDetails();
 
-    @Test
-    public void testMultiplyNumbers() {
-        int result = calculator.multiplyNumbers(6, 9);
-        System.out.println("Multiplication : " + result);
-        assertEquals(54, result);
-    }
+        List<RegisterDetails> mockEmployeeList = Arrays.asList(employee1, employee2);
+        when(registerDetailsRepository.findAll()).thenReturn(mockEmployeeList);
 
-    @Test
-    public void testDivideNumbers() {
-        int result = calculator.divideNumbers(81, 9);
-        System.out.println("Division : " + result);
-        assertEquals(9, result);
-    }
+        List<RegisterDetails> actualEmployeeList = employeeService.getAllEmployees();
+        System.out.println(actualEmployeeList);
 
-    @Test
-    public void testModuloNumbers() {
-        int result = calculator.moduloNumbers(22, 5);
-        System.out.println("Modulo : " + result);
-        assertEquals(2, result);
+        assertEquals(2, actualEmployeeList.size());
     }
 }
