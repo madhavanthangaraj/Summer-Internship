@@ -7,12 +7,38 @@
     <list default="true" id="45aa495a-f2b7-4b37-a036-9ef5404d33cf" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/23CS077/target/classes/com/example/demo/controller/EmployeeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/23CS077/target/classes/com/example/demo/controller/EmployeeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/23CS077/target/classes/com/example/demo/model/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/23CS077/target/classes/com/example/demo/model/Employee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/23CS077/target/classes/com/example/demo/repository/EmployeeRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/23CS077/target/classes/com/example/demo/repository/EmployeeRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/23CS077/target/classes/com/example/demo/service/EmployeeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/23CS077/target/classes/com/example/demo/service/EmployeeService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-react-ems/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/springboot-react-ems/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/New folder/springboot-project" beforeDir="false" afterPath="$PROJECT_DIR$/New folder/springboot-project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/New folder/springboot-project/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/New folder/springboot-project/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Springboot-ems.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Springboot-ems/src/main/java/com/example/springbootfirst/controllers/Hello.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Springboot-ems/src/test/java/com/example/springbootfirst/Controller/HelloTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot-project" beforeDir="false" afterPath="$PROJECT_DIR$/springboot-project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot-project/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot-project/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot-project/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot-project/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot-project/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot-project/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot-project/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot-project/src/main/java/com/example/springbootfirst/SpringbootfirstApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot-project/src/main/java/com/example/springbootfirst/config/SpringConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot-project/src/main/java/com/example/springbootfirst/controllers/AuthController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot-project/src/main/java/com/example/springbootfirst/controllers/EmployeeController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot-project/src/main/java/com/example/springbootfirst/jwt/JwtAuthenticationFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot-project/src/main/java/com/example/springbootfirst/jwt/JwtTokenProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot-project/src/main/java/com/example/springbootfirst/models/JwtResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot-project/src/main/java/com/example/springbootfirst/models/RegisterDetails.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot-project/src/main/java/com/example/springbootfirst/models/Roles.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot-project/src/main/java/com/example/springbootfirst/models/UserDetailsDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot-project/src/main/java/com/example/springbootfirst/repository/RegisterDetailsRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot-project/src/main/java/com/example/springbootfirst/repository/RegisterRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot-project/src/main/java/com/example/springbootfirst/repository/RolesRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot-project/src/main/java/com/example/springbootfirst/services/AuthService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot-project/src/main/java/com/example/springbootfirst/services/CustomUserDetailsService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot-project/src/main/java/com/example/springbootfirst/services/EmployeeService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot-project/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot-project/src/test/java/com/example/springbootfirst/SpringbootfirstApplicationTests.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +46,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/springboot" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -30,18 +56,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/HP/Desktop/springboot-intern&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/HP/Desktop/springboot-intern",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   }
-}</component>
+}]]></component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="45aa495a-f2b7-4b37-a036-9ef5404d33cf" name="Changes" comment="" />

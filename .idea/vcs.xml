@@ -3,7 +3,8 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/New folder/springboot-project" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/springboot" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/springboot-react-ems" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/springboot-project" vcs="Git" />
   </component>
 </project>
