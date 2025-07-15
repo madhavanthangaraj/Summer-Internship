@@ -1,7 +1,7 @@
 package com.example.springbootfirst.services;
 
-import com.example.springbootfirst.models.Employee;
-import com.example.springbootfirst.repository.EmployeeRepository;
+import com.example.springbootfirst.models.RegisterDetails;
+import com.example.springbootfirst.repository.RegisterDetailsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,35 +9,36 @@ import java.util.List;
 
 @Service
 public class EmployeeService {
+
     @Autowired
-    EmployeeRepository empRepo;
+    private RegisterDetailsRepository repo;
 
-    public List<Employee> getMethod() {
-        return empRepo.findAll();
+    public List<RegisterDetails> getAllEmployees() {
+        return repo.findAll();
     }
 
-    public Employee getEmployeeById(int empID) {
-        return empRepo.findById(empID).orElse(new Employee());
+    public RegisterDetails getEmployeeById(int id) {
+        return repo.findById(id).orElse(null);
     }
 
-
-    public List<Employee> getEmployeeByJob(String job) {
-        return empRepo.findByJob(job);
+    public String addEmployee(RegisterDetails emp) {
+        repo.save(emp);
+        return "Employee added";
     }
 
-    public String addEmployee(Employee employee) {
-        empRepo.save(employee);
-        return "Employee Added Successfully!!!";
+    public String updateEmployee(int id, RegisterDetails emp) {
+        emp.setId(id); // assuming your model has setId()
+        repo.save(emp);
+        return "Employee updated";
     }
 
-    public String updateEmployee(Employee employee) {
-        empRepo.save(employee);
-        return "Employee Updated Successfully!!!";
+    public String deleteEmployees() {
+        repo.deleteAll();
+        return "All employees deleted";
     }
 
-    public String deleteEmployeeById(int empID) {
-        empRepo.deleteById(empID);
-        return "Employee Deleted Successfully!!!";
+    public String deleteEmployeeById(int id) {
+        repo.deleteById(id);
+        return "Employee deleted";
     }
-
 }

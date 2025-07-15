@@ -1,64 +1,46 @@
 package com.example.springbootfirst.config;
 
+import com.example.springbootfirst.jwt.JwtAuthenticationFilter;
+import com.example.springbootfirst.services.CustomUserDetailsService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.Customizer;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
 @EnableMethodSecurity
 public class SpringConfiguration {
 
-  @Bean
-  public PasswordEncoder passwordEncoder(){
-    return new BCryptPasswordEncoder();
-  }
+  @Autowired
+  CustomUserDetailsService customUserDetailsService;
+
+  @Autowired
+  private JwtAuthenticationFilter jwtAuthenticationFilter;
 
   @Bean
-  SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+  public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
     http
-            .csrf((csrf)->csrf.disable())
-            .authorizeHttpRequests(auth-> {
-//              auth.requestMatchers(HttpMethod.POST,"/employee").hasRole("ADMIN");
-//              auth.requestMatchers(HttpMethod.PUT,"/employee").hasRole("ADMIN");
-//              auth.requestMatchers(HttpMethod.DELETE,"/employee").hasRole("ADMIN");
-//              auth.requestMatchers(HttpMethod.GET,"/**").hasAnyRole("ADMIN","USER");
-              auth.requestMatchers("/api/auth/register","/api/auth/login").permitAll();
-              auth.requestMatchers("/api/auth/register",
-                      "/api/auth/login",
-                      "/api/auth/roles/**",
-                      "/api/auth/**").permitAll();
-              auth.anyRequest().authenticated();
-            })
-            .httpBasic(Customizer.withDefaults());
+            .csrf(csrf -> csrf.disable())
+            .authorizeHttpRequests(auth -> auth
+                    .requestMatchers("/api/auth/**").permitAll()
+                    .anyRequest().authenticated()
+            )
+            .formLogin(form -> form.disable())
+            .httpBasic(Customizer.withDefaults())
+            .logout(logout -> logout.permitAll())
+            .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class); // 👈 inject filter
+
     return http.build();
   }
 
-//    @Bean
-//    UserDetailsService userDetailsService(){
-//        UserDetails admin = User.builder()
-//                .username("admin")
-//                .password(passwordEncoder().encode("admin"))
-//                .roles("ADMIN")
-//                .build();
-//
-//        UserDetails mani = User.builder()
-//                .username("mani")
-//                .password(passwordEncoder().encode("mani"))
-//                .roles("USER")
-//                .build();
-//
-//        return new InMemoryUserDetailsManager(admin, mani);
-//    }
-
+  @Bean
+  public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
+    return config.getAuthenticationManager();
+  }
 }
