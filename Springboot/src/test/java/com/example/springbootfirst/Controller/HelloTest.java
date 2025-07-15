@@ -1,4 +1,7 @@
-package com.example.springbootfirst.Controller;
+package com.example.springbootfirst.controllers;
 
-public class HelloTest {
+public class Hello {
+    public String helloTest(){
+        return "Hello Test";
+    }
 }
