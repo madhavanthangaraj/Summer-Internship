@@ -1,10 +1,28 @@
-Docker Code
+# ---- Build Stage ----
+FROM maven:3.9.6-eclipse-temurin-21 AS build
+WORKDIR /app
 
-FROM maven:3.8.5-openjdk-17 AS build
+# Copy pom and dependencies separately for caching
+COPY pom.xml .
+RUN mvn dependency:go-offline
+
+# Copy all source files
 COPY . .
+
+# Build the project and skip tests
 RUN mvn clean package -DskipTests
 
-FROM openjdk:17.0.1-jdk-slim
-COPY --from=build /target/*.jar springbootfirst.jar
+# ---- Runtime Stage ----
+FROM eclipse-temurin:21-jdk-jammy
+
+# Set working directory inside container
+WORKDIR /app
+
+# Copy the jar from build stage
+COPY --from=build /app/target/*.jar app.jar
+
+# Expose port 8080
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","springbootfirst.jar"]
+
+# Start the application
+ENTRYPOINT ["java", "-jar", "app.jar"]

@@ -1,7 +1,8 @@
 package com.example.springbootfirst.services;
 
-import com.example.springbootfirst.models.RegisterDetails;
-import com.example.springbootfirst.repository.RegisterDetailsRepository;
+import com.example.springbootfirst.models.Employee;
+import com.example.springbootfirst.repository.EmployeeRepository;
+import com.example.springbootfirst.repository.RolesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,34 +12,42 @@ import java.util.List;
 public class EmployeeService {
 
     @Autowired
-    private RegisterDetailsRepository repo;
+    private EmployeeRepository empRepo;
 
-    public List<RegisterDetails> getAllEmployees() {
-        return repo.findAll();
+    @Autowired
+    private RolesRepository rolesRepository;
+
+    public List<Employee> getMethod() {
+        return empRepo.findAll();
     }
 
-    public RegisterDetails getEmployeeById(int id) {
-        return repo.findById(id).orElse(null);
+    public Employee getEmployeeById(int empID) {
+        return empRepo.findByEmpID(empID);
     }
 
-    public String addEmployee(RegisterDetails emp) {
-        repo.save(emp);
-        return "Employee added";
+    public List<Employee> getEmployeeByJob(String job) {
+        return empRepo.findByJob(job);
     }
 
-    public String updateEmployee(int id, RegisterDetails emp) {
-        emp.setId(id); // assuming your model has setId()
-        repo.save(emp);
-        return "Employee updated";
+    public String addEmployee(Employee employee) {
+        empRepo.save(employee);
+        return "Employee Added Successfully!!!";
     }
 
-    public String deleteEmployees() {
-        repo.deleteAll();
-        return "All employees deleted";
+
+    public String updateEmployeeById(int id, Employee updated) {
+        Employee existing = empRepo.findById(id)
+                .orElseThrow(() -> new RuntimeException("Employee not found with ID: " + id));
+        existing.setName(updated.getName());
+        existing.setJob(updated.getJob());
+        // ✅ Removed email
+        empRepo.save(existing);
+        return "Employee with ID " + id + " updated successfully.";
     }
 
-    public String deleteEmployeeById(int id) {
-        repo.deleteById(id);
-        return "Employee deleted";
+    public String deleteEmployeeById(int empID) {
+        empRepo.deleteById(empID);
+        return "Employee Deleted Successfully!!!";
     }
+
 }

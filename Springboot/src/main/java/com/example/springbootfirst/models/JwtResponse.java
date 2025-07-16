@@ -1,17 +1,15 @@
-package com.example.springbootfirst.model;
+package com.example.springbootfirst.models;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.AllArgsConstructor;
-
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 
-
-public class JwtResponse{
+public class JwtResponse {
     private String token;
-    private String username;
+    private String userName;
     private String roles;
 }
